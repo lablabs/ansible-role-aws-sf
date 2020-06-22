@@ -1,0 +1,6 @@
+---
+aws_sf_init_dir_scripts: "/data/init/scripts"
+aws_sf_init_dir_ansible: "/data/init/ansible"
+aws_sf_init_script: "{{ aws_sf_init_dir_scripts }}/init.sh"
+aws_sf_init_playbook: ""
+...
