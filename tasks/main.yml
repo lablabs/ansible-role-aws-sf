@@ -1,19 +1,19 @@
 ---
-- name: Create init directory
+- name: "Create init directory '{{ aws_sf_init_dir_scripts }}'"
   file:
     path: "{{ aws_sf_init_dir_scripts }}"
     state: directory
 
-- name: Copy ansible dir to remote
+- name: "Copy ansible dir to remote '{{ aws_sf_init_dir_ansible }}'"
   synchronize:
     delete: "yes"
     src: "{{ playbook_dir }}/../.."
     dest: "{{ aws_sf_init_dir_ansible }}"
 
-- name: Copy init script to remote server
+- name: "Copy init script '{{ aws_sf_init_script_path }}' to remote server"
   template:
     src: init.j2
-    dest: "{{ aws_sf_init_script }}"
+    dest: "{{ aws_sf_init_script_path }}"
     owner: root
     group: root
 ...
