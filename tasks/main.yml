@@ -6,6 +6,7 @@
 
 - name: Copy ansible dir to remote
   synchronize:
+    delete: "yes"
     src: "{{ playbook_dir }}/../.."
     dest: "{{ aws_sf_init_dir_ansible }}"
 
