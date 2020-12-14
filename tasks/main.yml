@@ -7,7 +7,7 @@
 - name: "Copy ansible dir to remote '{{ aws_sf_init_dir_ansible }}'"
   synchronize:
     delete: "yes"
-    src: "{{ playbook_dir }}/../.."
+    src: "{{ lookup('env', 'PWD') }}/"
     dest: "{{ aws_sf_init_dir_ansible }}"
 
 - name: "Copy init script '{{ aws_sf_init_script_path }}' to remote server"
